@@ -7,8 +7,8 @@ def home():
 
 @app.route('/login')
 def login():
-    return "Log in Page"
+    return render_template('users/login.html')
 
 @app.route('/register')
 def register():
-    return "Register Page"
+    return render_template('users/register.html')
