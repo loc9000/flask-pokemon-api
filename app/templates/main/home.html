@@ -24,9 +24,18 @@
 <div class="row">
     <div class="col-12">
         <ul class="list-group">
-            <li class="list-group-item">
-                Pokemon Name
+            {% for pokemon in pokemon%}
+            <li class="list-group-item mb-4">
+                {{ pokemon['name'] }}
+                <div>
+                    <small>
+                        <span class="float-right">
+                            {{ pokemon['date_created'] }}
+                        </span>
+                    </small>
+                </div>
             </li>
+            {% endfor %}
         </ul>
     </div>
 </div>

@@ -1,4 +1,4 @@
-from app import app
+from flask import current_app as app
 
 @app.errorhandler(404)
 def not_found_error(error):
