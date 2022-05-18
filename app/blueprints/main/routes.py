@@ -1,30 +1,10 @@
 from flask import render_template, current_app as app
 from datetime import datetime as dt
+from app.blueprints.main.models import Pokemon
 
 @app.route('/')
 def home():
-
-    pokemon_list = [
-        {
-            'name': 'Pokemon name', 
-            'description': 'pokemon description',
-            'type': 'pokemon type',
-            'date_created': dt.utcnow()
-        },
-        {
-            'name': 'Pokemon name', 
-            'description': 'pokemon description',
-            'type': 'pokemon type',
-            'date_created': dt.utcnow()
-        },
-        {
-            'name': 'Pokemon name', 
-            'description': 'pokemon description',
-            'type': 'pokemon type',
-            'date_created': dt.utcnow()
-        }
-    ]
-    return render_template('main/home.html', pokemon=pokemon_list)
+    return render_template('main/home.html', pokemon=Pokemon.query.all())
 
 @app.route('/pokedex')
 def pokedex():

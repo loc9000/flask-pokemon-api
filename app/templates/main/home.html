@@ -26,11 +26,11 @@
         <ul class="list-group">
             {% for pokemon in pokemon%}
             <li class="list-group-item mb-4">
-                {{ pokemon['name'] }}
+                {{ pokemon.name }}
                 <div>
                     <small>
                         <span class="float-right">
-                            {{ pokemon['date_created'] }}
+                            {{ moment(pokemon.date_created).fromNow() }} 
                         </span>
                     </small>
                 </div>
